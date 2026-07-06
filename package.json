@@ -1,0 +1,7 @@
+{
+  "name": "@ventures/tabsonar",
+  "private": true,
+  "version": "0.1.0",
+  "description": "TabSonar — Chrome MV3 extension: instant tab search, auto-dedupe, one-click RAM freeing. No build step, load unpacked.",
+  "type": "module"
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="popup.css" />
+  <title>TabSonar</title>
+</head>
+<body>
+  <div class="palette" id="palette">
+
+    <!-- search row -->
+    <div class="search-row" id="searchRow">
+      <span class="search-ico" id="searchIco" aria-hidden="true"></span>
+      <input id="q" type="text" autocomplete="off" spellcheck="false"
+             placeholder="Search tabs — or press the mic" aria-label="Search tabs" />
+      <button id="mic" class="mic-btn" title="Voice search (M)" aria-label="Voice search"></button>
+      <button id="langToggle" class="lang-btn" title="Switch language" aria-label="Switch language">DE</button>
+    </div>
+
+    <!-- review-mode bar (hidden by default) -->
+    <div class="review-bar" id="reviewBar" hidden>
+      <button id="reviewBack" class="icon-btn" title="Back to search" aria-label="Back to search"></button>
+      <span class="review-title" id="reviewTitle">Review old tabs</span>
+      <span class="review-progress" id="reviewProgress" aria-live="polite"></span>
+    </div>
+
+    <!-- status row: stats + window filter -->
+    <div class="status-row" id="statusRow">
+      <span class="stats" id="stats">…</span>
+      <span class="winseg" id="winseg" role="tablist" aria-label="Scope">
+        <button class="seg" id="segAll" data-scope="all" aria-selected="true">All</button>
+        <button class="seg" id="segThis" data-scope="this" aria-selected="false">This window</button>
+      </span>
+    </div>
+
+    <!-- start screen (empty query): a single compact hint row, no decoration -->
+    <div class="start" id="start" hidden>
+      <div class="hints-row">
+        <span><kbd>↑↓</kbd> <span data-i18n="hintNavigate">navigate</span></span>
+        <span><kbd>⏎</kbd> <span data-i18n="hintOpen">open</span></span>
+        <span><kbd>⌘⌫</kbd> <span data-i18n="hintClose">close</span></span>
+        <span><kbd>⌥1–8</kbd> <span data-i18n="hintJump">jump</span></span>
+      </div>
+    </div>
+
+    <!-- results list -->
+    <ul id="results" class="results" role="listbox" aria-label="Matching tabs" aria-live="polite"></ul>
+    <div id="empty" class="empty" hidden></div>
+
+    <!-- review mode card -->
+    <div id="review" class="review" hidden></div>
+
+    <!-- footer -->
+    <div class="footer" id="footer">
+      <span class="foot-stats" id="footStats"></span>
+      <div class="actions">
+        <button id="audioChip" class="chip chip-audio" hidden></button>
+        <button id="dedupe" class="chip chip-accent" hidden></button>
+        <button id="review-btn" class="chip chip-outline" hidden></button>
+        <span class="ram-group">
+          <button id="ram" class="chip chip-outline"></button>
+          <button id="ramInfo" class="info-btn" title="What does this do?" aria-label="What does this do?">i</button>
+        </span>
+      </div>
+    </div>
+    <div class="lifetime" id="lifetime" hidden></div>
+    <div class="feedback-row" id="feedbackRow">
+      <a id="feedbackLink" class="feedback-link" href="mailto:dario.mohtachem@qwp.de?subject=TabSonar%20Feedback" target="_blank" rel="noopener"></a>
+    </div>
+
+    <!-- toast stack -->
+    <div class="toasts" id="toasts" aria-live="polite"></div>
+  </div>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TabSonar — Privacy Policy</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif; max-width: 640px; margin: 48px auto; padding: 0 20px; line-height: 1.6; color: #1a1a1a; }
+  @media (prefers-color-scheme: dark) { body { color: #e6e8ee; background: #0b0c10; } a { color: #ff8a3d; } }
+  h1 { font-size: 22px; margin-bottom: 4px; }
+  .updated { color: #767a85; font-size: 13px; margin-bottom: 32px; }
+  h2 { font-size: 16px; margin-top: 32px; }
+  a { color: #ff6a00; }
+  code { background: rgba(127,127,127,.15); padding: 1px 5px; border-radius: 4px; font-size: 0.9em; }
+  ul { padding-left: 22px; }
+</style>
+</head>
+<body>
+  <h1>TabSonar — Privacy Policy</h1>
+  <p class="updated">Last updated: July 2026</p>
+
+  <p><strong>Short version: TabSonar collects nothing and sends nothing anywhere.</strong> It's a Chrome extension that runs entirely on your device.</p>
+
+  <h2>What TabSonar does</h2>
+  <p>TabSonar reads your open tabs (title, URL, favicon, audio state, last-used time) so it can show you a searchable list, detect duplicates, and free up memory. All of this happens locally, inside your browser.</p>
+
+  <h2>What it stores, and where</h2>
+  <ul>
+    <li><strong>Nothing leaves your device.</strong> TabSonar has no server, no analytics, and no network calls of its own.</li>
+    <li>Your language preference and a small "always keep this site" list are saved using Chrome's built-in <code>chrome.storage</code> API — local to your browser (the "keep" list syncs across your own signed-in Chrome profiles via Google's sync, the same as your bookmarks would).</li>
+    <li>A lifetime counter of auto-closed duplicates is stored locally the same way.</li>
+    <li>Tab favicons are loaded directly from the site that owns them (e.g. <code>notion.so</code> loads its own icon) — the same request your browser already makes when you open that site normally. TabSonar doesn't proxy, log, or see this request.</li>
+  </ul>
+
+  <h2>Permissions, and why</h2>
+  <ul>
+    <li><code>tabs</code> — to list, search, focus, close, mute, and discard tabs.</li>
+    <li><code>storage</code> — to remember your language and "keep" preferences.</li>
+    <li><code>system.memory</code> — to show free RAM in the header.</li>
+    <li><code>alarms</code> — to run a periodic background check for duplicate tabs.</li>
+    <li><code>sessions</code> — to restore a tab you closed by mistake ("Undo") and to show recently-closed tabs.</li>
+    <li><code>tabGroups</code> — to show an accurate tab-group count.</li>
+  </ul>
+
+  <h2>Third parties</h2>
+  <p>None. No advertising SDKs, no analytics, no data brokers.</p>
+
+  <h2>Changes</h2>
+  <p>If this ever changes (it's not planned to), this page will be updated and the extension's version history will reflect it.</p>
+
+  <h2>Contact</h2>
+  <p>Questions or feedback: <a href="mailto:dario.mohtachem@qwp.de?subject=TabSonar%20Privacy">dario.mohtachem@qwp.de</a></p>
+</body>
+</html>
